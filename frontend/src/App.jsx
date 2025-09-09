@@ -1,5 +1,5 @@
 import React from "react"
-import { Routes,Route } from "react-router-dom"
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Collectoin from "./pages/Collectoin"
 import About from "./pages/About"
 import Contact from "./pages/Contact"
@@ -14,21 +14,23 @@ import ProductCard from "./pages/ProductCart"
 import PlaceOrderr from "./pages/PlaceOrderr"
 import Login from "./pages/Login"
 import Verify from "./pages/Verify"
+import ScrollTotop from "./components/ScrollTotop.jsx";
+
 
 function App() {
   return (
-    <>
+      <>
     <div className="px-3 pt-6 sm:px-[3vw] md:px-[5vw] lg:px-[7vw]" >
       <ToastContainer/>
       <Navbar/>
       <SearchBar/>
     <Routes>
+      <Route path="/product/:productid" element={<Product/>} />
       <Route path="/cart" element={<ProductCard/>} />
       <Route path="/" element={<Home/>} />
       <Route path="/collection" element={<Collectoin/>} />
       <Route path="/about" element={<About/>} />
       <Route path="/contact" element={<Contact/>} />
-      <Route path="/product/:productid" element={<Product/>} />
       <Route path="/order" element={<Order/>} />
       <Route path="/placeorder" element={<PlaceOrderr/>} />
       <Route path="/login" element={<Login/>}  />
